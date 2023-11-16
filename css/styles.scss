@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: rgb(0, 93, 101);
+    text-align: center;
+    font-family: 'Inconsolata';
+    ul {
+        text-align: left;
+        color: rgb(69, 69, 69);
+        width: fit-content;
+        margin: 0 auto;
+    }
+    li {
+        list-style: none;
+    }
+}
+.hidden {
+    display: none;
+}
+section {
+    width: 60vw;
+    height: 80vh;
+    margin: 10vh auto;
+    background-color: aliceblue;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 25px;
+    box-shadow: 0 0 40px rgb(255, 255, 255);
+    h1 {
+        font-family: 'Nabla';
+        width: fit-content;
+        text-shadow: 0 0 20px black;
+        border-radius: 15px;
+        font-size: 3rem;
+        margin: 0 auto;
+    }
+    #result {
+        background-color: rgba(255, 153, 0, 0.5);
+        height: 12vh;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div {
+            height: fit-content;
+        }
+    }
+}
+form {
+    input[type="text"] {
+        font-family: 'Inconsolata';
+        padding: .25rem .5rem;
+        border-radius: 8px;
+        border: 1px solid rgb(255, 153, 0);
+    }
+    button {
+        padding: .25rem 0;
+        width: 4rem;
+        background-color: wheat;
+        color: rgb(0, 93, 101);
+        border: 1px solid rgb(0, 93, 101);
+        border-radius: 8px;
+        font-family: 'Inconsolata';
+    }
+}
+
