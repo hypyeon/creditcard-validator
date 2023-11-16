@@ -29,6 +29,27 @@ function transformNum(arr) {
     return digitArr;
 };
 
+function findCardCompany(arr) {
+    const cardNumArr = transformNum(arr);
+    const firstNum = cardNumArr[0];
+    const numAsStr = firstNum.toString();
+    let company;
+    switch (numAsStr) {
+        case '4':
+            company = 'Visa';
+            break;
+        case '5':
+            company = 'Mastercard';
+            break;
+        case '6':
+            company = 'Discover';
+            break;
+        default:
+            company = 'not registered in the system';
+    };
+    return company;
+};
+
 function sumOfTransformedNum(arr) {
     const sum = arr.reduce((acc, value) => {
         return acc + value;
@@ -39,19 +60,23 @@ function sumOfTransformedNum(arr) {
 function validator() {
     const val = document.getElementById("number").value;
     const transformedNum = transformNum(val);
+    const cardCompany = findCardCompany(val);
     const sum = sumOfTransformedNum(transformedNum);
     const sumToStr = sum.toString();
-    const text = document.getElementById("text");
+    const validity = document.getElementById("validity");
+    const cardComp = document.getElementById("cardInfo");
+    cardComp.innerText = `Your card issuer is ${cardCompany}.`;
     if (sumToStr[1] === '0') {
-        text.innerText = "This Credit Card number is VALID.";
+        validity.innerText = "This Credit Card number is VALID.";
     } else {
-        text.innerText = "This Credit Card number is INVALID.";
+        validity.innerText = "This Credit Card number is INVALID.";
     };
 };
 
 function formHandler() {
     const form = document.querySelector("form");
     const text = document.getElementById("text");
+    const val = document.getElementById("number").value;
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         text.classList.remove("hidden");
